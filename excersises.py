@@ -1,160 +1,341 @@
 #@Basics
 # Part1:
 # 1. Define an integer, a float, a string.
-
-
+# name = "Paul"
+# age = 23
+# PI = 3.14
 # 2. Assign 5 values in one line.
-
-
+# counter, i, j, k, p = 0, 0, 0, 0, 0
 # 3. Create 4 lists with: only numbers, only strings, only lists and all mixed together.
-
+# n_list = [2,33,3,4,6,7]
+# s_list = ["Dog", "Cat", "Fish"]
+# m_list = ["Siemanko", 0, "What's up", 2]
 
 # 4. Add, delete, iterate, remove, change, access value in the list.
-
+# test_list = [1,2,3,6,2]
+# test_list.append(12)
+# for val in test_list:
+#     print(val)
+# test_list.remove(2)
+# for val in test_list:
+#     print(val)
+# test_list[2] = 1
 
 # 5. Play around with `* - + / % **` on the variables - what is possible for which variable type?
-
-
+# print(name + " siemanko")
+# print(age**age)
+# print(PI / PI)
 # 6. Create two lists containing 10 instances of different variables. You are also required to create a list called big_list, which contains each variable, 10 times each, by concatenating the two lists you have created.
+# first_list = [2,3,5,6,1,9,0,2,4]
+# second_list = [0,1,3,2,9,2,1,8,7]
 
+# big_list = [first_list + second_list]
+# print(big_list)
 # 7. Write a format string with `%s, %f, %d`.
 
+# format_str = (`%s Siemanko %f middle`, "marek", 12)
+#to do
+
+# print(format_str)
 # 8. Test out `index(), count(), [start:stop:step], reverse, startswith(), endswith(), split(), lower(), upper()` functionalities of string.
+
+# big_string =  "I was in the shop in yesterday"
+# print(big_string.index("was"))
+# print(big_string.count("in"))
+# print(big_string[2: 10])
+# print(big_string.startswith("s"))
+# print(big_string.endswith("s"))
+# print(big_string.split(" "))
+# print(big_string.lower())
+# print(big_string.upper())
+# print(big_string.startswith())
 
 # 9. Play around with `is not in and or`.
 
+# print(big_list is not "Siemnako" or 1 is 1)
+
 # 10. Create 4 functions with 4 different parameter types: default, keyword, variable numbers and required.
+
+# def test_func_():
+#     print("test")
+
+# def test_func(num1, num2 = 2):
+#     print(num1, num2)
+
+# test_func(1)
+# test_func_()
 
 # 11. Create a list with a list inside - does it become one big list or a list with a second list in it?
 
+# list_1 = [[]]
+# print(list_1)
+
 # 12. Play with exceptions, implement 10 most popular mistakes in python made by the beginners and try/except them all with proper handling.
+
+# try:
+#     l = ["A", "B"]
+#     int(l[1])
+# except (ValueError, IndexError) as e:
+#     print("Amazing ", e)
 
 # 13. Create a class called `Programmer` with attributes `language` and `has_glasses` that inherits from a class called `Person` with `age` and `name` attributes. Implement getters, setters and constructors for them.
 
-# 14. Convert the list of weights to numpy array, then all of the weights from kg to lbs. Use the scalar conversion of 2.2 lbs per kg for conversion and print the result array in lbs. `weight_kg = [81.65, 97.52, 95.25, 92.98, 86.18, 88.45]`.
+# class Person:
+#     def __init__(self, name = "default name", age = 10):
+#         self.age = age
+#         self.name = name
 
+        
+# class Programmer(Person):
+#     def __init__(self, name = "default name", age = 10):
+#         super()
+#         self.name = name
+#         self.age = age
+#         self.language = "Default name"
+#         self.has_glasses = False
+
+# generic_dude = Person()
+# print("Hi my name is ", generic_dude.name, " i am ", generic_dude.age, " years old")
+# programmer_dude = Programmer("Maciek", 12)
+# print("Hi my name is ", programmer_dude.name, " i am ", programmer_dude.age, " years old ", ( "and i wear glasses" if programmer_dude.has_glasses else "i don't wear glasses"))
+# 14. Convert the list of weights to numpy array, then all of the weights from kg to lbs. Use the scalar conversion of 2.2 lbs per kg for conversion and print the result array in lbs. `weight_kg = [81.65, 97.52, 95.25, 92.98, 86.18, 88.45]`.
+# import numpy as np
+# weight_kg = [81.65, 97.52, 95.25, 92.98, 86.18, 88.45]
+# numpy_arr = np.array(weight_kg)
+# numpy_arr = numpy_arr * 2.2
+
+# print(numpy_arr)
 
 #@Part 2 
 # 1. Create a program that asks the user to enter their name and their age.
 # Print out a message addressed to them that tells them the year that they will turn 100 years old.
 
+# name, age
+# name = input("Write you're name: ")
+# age = input("Write you're age: ")
+# try:
+#     age = int(age)
+# except ValueError as er:
+#     print("Not a number provided")
+#     exit()
+# if age <= 100:
+
+#     print("Hi ", name , " you will be a 100 years old in ", 100 - age)
+# else:
+#     print("You're already a 100 years old")
 
 
 
 
-
-# 2. Write a Python program that accepts an integer (n) and computes the value of n+nn+nnn. Go to the editor
+ # 2. Write a Python program that accepts an integer (n) and computes the value of n+nn+nnn. Go to the editor
 # Sample value of n is 5 
 # Expected Result : 615
+# val_n = 0
+# val_n = input("Enter value: ")
 
+# try:
+#     val_n = int(val_n)
+# except ValueError as err:
+#     print("Non integer value provided")
 
-
-
-
-
-
-
-
+# print(val_n * 1 + val_n * 11 + val_n * 111)
 
 # 3. Write a Python program which takes two digits m (row) and n (column) as input and generates a two-dimensional array. 
 # The element value in the i-th row and j-th column of the array should be i*j.
 
+# row = input("row val: ")
+# column = input("column val: ")
+# try:
+#     row = int(row)
+#     column = int(column)
+# except ValueError as err:
+#     print("Error")
+# i = 0
+# j = 0
 
-
-
-
-
-
-
-
+# arr =  [[0] * column] * row
+# for column in arr:
+#     j = 0
+#     for row in column:
+#         arr[i][j] = i * j
+#         j+=1
+#     i+=1
+    
+# print(arr)
 
 
 # 4. Write a Python program to check a triangle is valid or not 
 
+# print("Enter triangle dimensions:")
+# x = input("x: ")
+# y = input("y: ")
+# z = input("z: ")
 
 
+# try:
+#     x = int(x)
+#     y = int(y)
+#     z = int(z)
+# except TypeError as err:
+#     print("error")
+#     exit(1)
 
-
-
-
+# if x + y < z or z + y < x or z + x < y:
+    # print("Triangle is not valid")
+# else:
+#   print("Triangle is valid")
 # 5. Write a Python program to construct the following pattern, using a nested loop number.
-
-
-
-
-
 
 # 6. Write a Python program to construct the following pattern, using a nested for loop.
 
-
-
-
-
-
-
-
 # 7. Write a Python program that accepts a string and calculate the number of digits and letters
 
+# inp = input("Put a string\n")
 
+# letters = 0
+# digits = 0
 
+# for character in inp:
+#     if character.isdigit():
+#         digits += 1
+#     elif character.isalpha():
+#         letters += 1
 
-
-
-
-
+# print("Letters ", letters)
+# print("Digits ", digits)
 
 # 8. Count the number of even and odd numbers from a series of numbers
-
-
-
-
+# input 
 # 9. Write a Python program to get the Fibonacci series between 0 to 50
+# def fib(num):
+#     if num <= 1:
+#         return num
+#     return fib(num - 1) + fib(num - 2)
 
-
+# num = 5
+# while True:
+#     num = fib(num)
+#     print(num)
+#     if num > 50:
+#         break
 
 # 10. Write a Python program to find those numbers which are divisible by 7 and multiple of 5, between 1500 and 2700
 
-
-
+# for num in range(1500, 2700):
+#     if(num % 7 == 0 and num % 5 == 0):
+#         print(num)
 
 # 11. Generate a random number between 1 and 9 (including 1 and 9).
 # Ask the user to guess the number, then tell them whether they guessed too low, too high, or exactly right.
+# import random
+# num = random.randint(1, 9)
 
-
-
-
+# while True:
+#     guess = input("Guess number from 1 to 9\n")
+#     try: 
+#         guess = int(guess)
+#     except ValueError as err:
+#         print("Wrong type")
+#     if guess > num:
+#         print("Too big")
+#     elif guess < num:
+#         print("Too small")
+#     else:
+#         print("You guessed right ")
+#         break
 
 # 12. Write a Python program to check the validity of a password (input from users).
+# special_characters = "!@#$%^&*()-+?_=,<>/"
+# password = input("Enter new_password\n")
 
-
-
-
-
-
+# contains_dig = False
+# if(len(password) < 8):
+#     print("Password has less than 8 characters try again")
+# for char in password:
+#     if(char.isdigit()):
+#         contains_dig = True
+# if(not contains_dig):
+#     print("Password doesn't have a number")
 
 # 13. Write a Python program to check a triangle is equilateral, isosceles or scalene.
 
+# x = int(input("X\n"))
+# y = int(input("Y\n"))
+# z = int(input("Z\n"))
+
+# if(x + y < z or x + z < y or y + z < x):
+#     print("Traingle doesn't exists")
+# elif(x == y == z):
+#     print("Triangle is equilateral")
+# elif(x == y or y == z or z == x):
+#     print("Triangle is isosceles")
+# else:
+#     print("Triangle is scalene")
+
 # 14. Write a Python program to check whether an alphabet is a vowel or consonant.
 
+# val = input("put alphabet \n")
+# vowels = ["A", "E", "I", "O", "U"]
+# if(len(val) == 1):
+#     for vowel in vowels:
+#         if(vowel == val.upper()):
+#             print("Vowel")
+#             exit(1)
+#     print("Consonant")
 
 # 15. Convert a list of characters into a string
 
+# char_list = ["a", "b", "c", "d"]
+# out = ""
+# out = out.join(char_list)
+# print(out)
 
 # 16. Write a Python program to check whether a list contains a sublist.
 
-
+# big_list = [["big", "small"],["red", "black"]]
+# print(big_list.__contains__(["big", "small"]))
 
 # 17. Write a Python program to find common items from two lists.
 
+# list_one = [1, 3, 2, 9, 4, 9, 0]
+# list_two = [8, 2, 3, 4, 5, 6, 7]
+
+# print(list[set(list_one).intersection(list_two)])
 
 # 18. Write a Python program to get the difference between the two lists
 
+# list_one = [1, 3, 2, 9, 4, 9, 0]
+# list_two = [8, 2, 3, 4, 5, 6, 7]
+
+# sum_set_one = 0
+# for el in list_one:
+#     sum_set_one += el
+# for el in list_two:
+#     sum_set_one -= el
+# print(sum_set_one)
 # 19. Write a Python program to get the maximum number from a list.
-
-
+# just_list = [3, 111, 2,9]
+# max = just_list[0]
+# for el in just_list:
+#     if(max < el):
+#         max = el
+# print(max)
 # 20. Write a Python program to get the frequency of the elements in a list.
+# big_list = [2,4,5,6,1,3,43,22,6,1,5,7,8,2,1,5]
+
+# frequency_list = {}
+
+# for item in big_list:
+#     if item in frequency_list:
+#         frequency_list[item] += 1
+#     else:
+#         frequency_list[item] = 1
+
+# print(frequency_list)
 
 # 21. Write a Python program to generate all permutations of a list in Python
+
+
 
 # 22. Write a Python program to remove duplicates from a list.
 
